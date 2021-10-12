@@ -1,0 +1,27 @@
+﻿<div ng-app="sportsStore">
+    <div ng-controller="SportsStore as vm">
+        <div class="navbar navbar-inverse">
+            <a class="navbar-brand" href="#">SPORTS STORE</a>
+            <div class="nav pull-right">
+                @Html.ActionLink("Admin Login", "Index", "Admin", new { }, new { @class = "btn btn-primary navbar-btn" }) )
+            </div>
+            <cart-summary />
+        </div>
+        <div class="alert alert-danger" ng-show="vm.data.error">
+            Error ({{vm.data.error.status}}). The product data was not loaded.
+            <a href="/app.html" class="alert-link">Click here to try again</a>
+        </div>
+        <ng-view />
+
+    </div>
+</div>
+@section scripts {
+    <script src="~/src/sportsStore/module.js" asp-append-version="true"></script>
+    <script src="~/src/sportsStore/sportsStore.js" asp-append-version="true"></script>
+    <script src="~/src/sportsStore/productList.js" asp-append-version="true"></script>
+    <script src="~/src/sportsStore/customFilters.js" asp-append-version="true"></script>
+    <script src="~/src/sportsStore/components/cart/module.js" asp-append-version="true"></script>
+    <script src="~/src/sportsStore/components/cart/cartdirective.js" asp-append-version="true"></script>
+    <script src="~/src/sportsStore/components/cart/cartFactory.js" asp-append-version="true"></script>
+    <script src="~/src/sportsStore/checkoutController.js" asp-append-version="true"></script>
+}
