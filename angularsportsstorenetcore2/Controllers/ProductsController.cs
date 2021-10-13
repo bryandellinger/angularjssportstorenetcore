@@ -35,7 +35,7 @@ namespace angularsportsstorenetcore2.Controllers
             return Ok(model);
         }
 
-        [HttpPut("{id:int}")]
+        [HttpPost("{id:int}")]
         public IActionResult Put([FromBody]  Product model)
         {
             context.Update(model);
